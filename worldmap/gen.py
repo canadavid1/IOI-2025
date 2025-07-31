@@ -1,7 +1,7 @@
 import random
 
 N = 40
-M = N-1
+M = (N*(N-1))//2
 p = list(range(1,N+1))
 random.shuffle(p)
 e: set[tuple[int,int]] = set()
