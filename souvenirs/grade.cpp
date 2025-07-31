@@ -32,8 +32,7 @@ int main()
     std::cin >> N;
     P = std::vector<long long>(N);
     ct = std::vector<int>(N,0);
-    // for(auto& i : P) std::cin >> i;
-    for(int i = 0; i < N; i++) P[i] = N-i;
+    for(auto& i : P) std::cin >> i;
     buy_souvenirs(N,P[0]);
     for(int i = 0; i < N; i++) if (ct[i] != i) {
         std::cerr << "wrong count of " << i << ": " << ct[i] << "\n";
