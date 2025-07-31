@@ -19,7 +19,7 @@ else:
         e.add(tuple(sorted((random.randint(1,N),random.randint(1,N)))))
 
 print(N,M)
-# for x,y in e:
-#     print(x,y)
-for i in range(1,N):
-    print(i,i+1 )
+for x,y in e:
+    print(x,y)
+# for i in range(1,N):
+#     print(i,i+1 )
