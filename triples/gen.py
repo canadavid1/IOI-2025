@@ -1,7 +1,7 @@
 
 import random
-N = 100
-H = [random.randrange(1,10) for i in range(N)]
+N = 20
+H = [random.randint(1,4) for i in range(N)]
 print(1)
 print(N)
 print(*H)

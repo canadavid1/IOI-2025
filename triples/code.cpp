@@ -4,13 +4,16 @@
 #include <map>
 #include <iostream>
 inline bool works(int i,int j, int k,const std::vector<int>& H) {
+    static std::set<std::tuple<int,int,int>> seen;
     if( i >= j || j >= k || k >= H.size()) return false;
+    if(seen.count({i,j,k})) return false;
     int d[3] = {j-i,k-j,k-i};
     int h[3] = {H[i],H[j],H[k]};
     std::sort(d,d+3);
     std::sort(h,h+3);
     if (d[0] == h[0] && d[1] == h[1] && d[2] == h[2]) {
         std::cerr << i << " " << j << " " << k << "\n";
+        seen.emplace(i,j,k);
         return true;
     }
     return false;
@@ -31,7 +34,7 @@ long long count_triples(std::vector<int> H) {
                                            j-H[j] = i-H[i]  [j = k-H[i]]
 
 
-                                           i+H[i] could alias !!
+                                           i+H[i] could alias !! -> note: want this high for part II
                                            H[i] <= 10 makes at most 10 aliases
                                            H non-decreasing also alleviates
                                         
