@@ -6,9 +6,9 @@ def int_or(a):
         return None
 
 import random
-f = lambda i: (i-[0,2,10][(i+1)%3])
-N = 20
-H = list(map(int_or,"3 1 3 - - 5 4 - - -  3".split()))
+f = lambda i: (i-[0,2,12,22][(i+1)%4])
+N = 500
+H = list(map(int_or,"4 1 4 - - - 6 5 - - -  11  4  -  -  5  -  -  -  -  -  -  4".split()))
 H += [None]*(N-len(H))
 for i in range(N):
     if H[i] == None: H[i] = f(i)
