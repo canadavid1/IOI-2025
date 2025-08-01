@@ -120,8 +120,10 @@ long long count_triples(std::vector<int> H) {
         ct += left[XmH[j]]  *  right[XpH[j]];
         left[XmH[j]].insert(XpH[j]);
     }
+    std::cerr << "pre-trivial: " << ct << "\n";
     for(int i = 0; i < N; i++) {
         for(int j : {i+H[i],i-H[i]}) {
+            if (j < 0 || j >= N) continue;
             for(int k : {i+H[j],i-H[j],j+H[j],j-H[j]}) 
                 ct += works(i,j,k,H);
         }
