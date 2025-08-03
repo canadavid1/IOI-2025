@@ -1,0 +1,4 @@
+*.out
+check
+.tmp/
+*/*/tests/
